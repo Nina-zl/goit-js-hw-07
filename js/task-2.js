@@ -25,26 +25,31 @@ const images = [
   }
 ];
 
+const gallery = document.querySelector(".gallery");
+
+function createMarkup(arr) {
+  return arr
+    .map(
+      (item) =>
+        `<li class="gallery-item">
+          <img src="${item.url}" alt="${item.alt}" class="gallery-image">
+        </li>`
+    )
+    .join("");
+}
 
 
+gallery.insertAdjacentHTML("beforeend", createMarkup(images));
 
 
+gallery.style.display = "flex";
+gallery.style.flexWrap = "wrap";
+gallery.style.gap = "15px";
+gallery.style.listStyle = "none";
 
 
-
-
-
-
-
-
-const list = document.querySelector(".usernames");
-
-// Adds an item to the end of the list
-const lastItem = document.createElement("li");
-lastItem.textContent = "Poly";
-list.append(lastItem);
-
-// Adds an item to the beginning of the list
-const firstItem = document.createElement("li");
-firstItem.textContent = "Ajax";
-list.prepend(firstItem);
+document.querySelectorAll(".gallery-image").forEach((img) => {
+  img.style.width = "250px";
+  img.style.height = "auto";
+  img.style.borderRadius = "12px";
+});
