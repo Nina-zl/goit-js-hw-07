@@ -44,12 +44,12 @@ gallery.insertAdjacentHTML("beforeend", createMarkup(images));
 
 gallery.style.display = "flex";
 gallery.style.flexWrap = "wrap";
-gallery.style.gap = "15px";
+gallery.style.gap = "48px 24px";
 gallery.style.listStyle = "none";
 
 
 document.querySelectorAll(".gallery-image").forEach((img) => {
-  img.style.width = "250px";
-  img.style.height = "auto";
-  img.style.borderRadius = "12px";
+  img.style.width = "360px";
+  img.style.height = "300";
+
 });
